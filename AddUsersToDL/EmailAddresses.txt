@@ -1,0 +1,7 @@
+Tony.Stark@domain.com
+Thor.Odinson@domain.com
+Bruce.Banner@domain.com
+Steve.Rogers@domain.com
+Natasha.Romanoff@domain.com
+Peter.Parker@domain.com
+Stephen.Strange@domain.com

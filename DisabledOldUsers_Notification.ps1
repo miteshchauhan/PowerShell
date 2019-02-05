@@ -2,6 +2,8 @@
 # Script will look in specified OUs for users that have been disabled for X amount of days and send an email containing these users.
 #===================================================================================================================================
 
+# Purge users using DisabledOldUsers_Purge.ps1 script
+
 $OUs = "OU=Laptop_Users,OU=UK_LON,OU=domain,DC=domain,DC=com","OU=Laptop_Users,OU=UK_MAN,OU=domain,DC=domain,DC=com"
 $days = 365
 $Users = Foreach ($OU in $OUs) { Get-ADUser -Filter {Enabled -eq $FALSE} -SearchBase $OU -Properties Name,SamAccountName,Office,LastLogonDate | Where-Object {($_.LastLogonDate -lt (Get-Date).AddDays(-$days)) -and ($_.LastLogonDate -ne $NULL)} }
